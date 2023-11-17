@@ -1,0 +1,16 @@
+{
+  "name": "visionService/visionService",
+  "description": "NewLetC",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "JK & DM",
+      "email": "jacek.kos@hiab.com"
+    }
+  ],
+  "require": {
+    "slim/slim": "3.12.3",
+    "monolog/monolog": "^1.23"
+  }
+}
