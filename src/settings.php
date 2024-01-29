@@ -511,13 +511,11 @@ $app->post('/add_problems_column', function (Request $request, Response $respons
 
 $app->get('/get_workers', function (Request $request, Response $response, $args) {
 
-    $db = new database($host = 'Plsts1-s0044', 'psq', 'Vincent7', 'hiabworkers');
+    $db = new database($host = 'firao1-s0018', 'hiflow', 'hiflow', 'hiabworkers');
     $db->query("select 
                       distinct zone_id, 
                       user_name 
-                    from workers 
-                    where 
-                      is_working = 'T'");
+                    from workers");
 
     while($db->fetchObject()) {
         $result[] = $db->row;

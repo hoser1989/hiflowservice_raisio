@@ -11,7 +11,7 @@ class database {
 //    }
 
     //LetsC dev - dev db
-    function __construct($host = 'ieddk1-s0010', $user = 'pqs', $password = 'Victor1', $db = 'hiflow'){
+    function __construct($host = 'firao1-s0018', $user = 'hiflow', $password = 'hiflow', $db = 'hiflow'){
         $this->connect($host, $user, $password, $db);
     }
 
