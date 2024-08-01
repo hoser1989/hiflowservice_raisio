@@ -112,3 +112,14 @@ $app->post('/item_on_hand', function (Request $request, Response $response, $arg
 
     return $response;
 });
+
+
+$app->get('/get_project', function (Request $request, Response $response, $args) {
+    $db = new database();
+    $params = $request->getQueryParams();
+    $productionOrder = $params['order'];
+
+    $res = $db->queryOne("select Project from LNProductionOrder where ProductionOrder = '$productionOrder'");
+
+    echo json_encode(['project' => $res]);
+});

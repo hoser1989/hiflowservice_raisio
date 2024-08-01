@@ -138,7 +138,8 @@ $app->post('/picking_queue', function (Request $request, Response $response, $ar
                                  else 'Nie'
                              END as verification_status,
                              wpq.verification_login,
-                             wpq.verification_dt
+                             wpq.verification_dt,
+                             wpq.project
                       from wh_picking_queue wpq
                                left join LNProductionOrder lp on lp.ProductionOrder = wpq.pdno
                                left join max_comment  mc on mc.pdno = wpq.pdno
@@ -198,7 +199,8 @@ $app->post('/picking_queue', function (Request $request, Response $response, $ar
             'comment' => 'No data',
             'verification_status' => 'No data',
             'verification_login' => 'No data',
-            'verification_dt' => 'No data'
+            'verification_dt' => 'No data',
+            'project' => 'No data'
         ));
     }
 

@@ -10,7 +10,7 @@ $app->post('/docs', function (Request $request, Response $response, $args) {
     $params = json_decode($request->getBody());
     $wc = $params->wc;
 //    $wc = 'D_S1.5LR';
-    $db->query("exec generate_docs_by_wc '$wc'");
+    $db->query("exec generate_do    cs_by_wc '$wc'");
 
     while($db->fetchObject()) {
         $result[] = $db->row;

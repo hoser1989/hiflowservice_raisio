@@ -82,9 +82,10 @@ $app->post('/save_checklist_action', function (Request $request, Response $respo
     $value = isset($params->value) ? $params->value : '';
     $userName = isset($params->userName) ? $params->userName : null;
     $status = isset($params->status) ? $params->status : '';
+    $efdt = isset($params->efdt) ? $params->efdt : null;
 
     $db = new database();
-//    $db->query("exec qa_update_checklist $id, '$comment', '$value', '$userName','$status'");
+    $db->query("exec qa_update_checklist $id, '$comment', '$value', '$userName','$status', '$efdt'");
 
     echo json_encode(["status" => 'Action saved!']);
 
