@@ -234,7 +234,7 @@ $app->post('/engrave_cancel_call', function (Request $request, Response $respons
 $app->post('/engrave_check_the_printer_queue', function (Request $request, Response $response, $args) {
     $db = new database();
 
-    $db->query("select ProductionOrder, SerialNumber from do_grawerowania where status = 0 and 1=1");
+    $db->query("select ProductionOrder, SerialNumber from do_grawerowania where status = 0");
 
     while($db->fetchObject()) {
         $result[] = $db->row;
