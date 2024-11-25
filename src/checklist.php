@@ -133,11 +133,12 @@ $app->post('/save_checklist_all', function (Request $request, Response $response
 //            echo 'status: ' . $arr['status'] . " | ". $currentChecklist[$i]['status'] . ' ^';
 //            echo 'value: ' . $arr['value'] . " | ". $currentChecklist[$i]['value'] . ' ^';
 //            echo "</pre>";
-            $res = $db->queryOne("exec qa_update_checklist '". $arr['id'] ."', '". $arr['comment'] ."', '". $arr['value'] ."', '$userName','". $arr['status'] ."'");
+            $res = $db->queryOne("exec qa_update_checklist '". $arr['id'] ."', '". $arr['comment'] ."', '". $arr['value'] ."', '$userName','". $arr['status']."', '". $arr['efdt'] ."'");
             $results[$arr['id']] = $res;
         }
         $i++;
     }
+
 
     echo json_encode(["status" => $results]);
 
