@@ -105,6 +105,10 @@ class database {
                 break;
             case 'prod_seq': $k = 'o.prod_seq';
                 break;
+            case 'Add Info 1': $k = 'add_info_1';
+                break;
+            case 'Add Info 2': $k = 'add_info_2';
+                break;
         }
         return $k;
     }
