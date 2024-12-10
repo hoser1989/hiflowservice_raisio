@@ -83,7 +83,7 @@ $app->post('/view_by_user', function (Request $request, Response $response, $arg
     if($sortName != null and $sortOrder != null) {
         $whereSort = "[$sortName] $sortOrder";
     } else {
-        $whereSort = '[Start Date] desc';
+        $whereSort = '[prod_seq]';
     }
 
     $from = $params->from;
