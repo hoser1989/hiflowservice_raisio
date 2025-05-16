@@ -125,7 +125,9 @@ $app->post('/save_checklist_all', function (Request $request, Response $response
     $i = 0;
     $results = array();
     foreach ($convChecklist as $arr) {
-        if($arr['comment'] !== $currentChecklist[$i]['comment'] ||
+        if($arr['status'] === '') {
+            $results = 0;
+        } else if($arr['comment'] !== $currentChecklist[$i]['comment'] ||
             $arr['status'] !== $currentChecklist[$i]['status'] ||
             $arr['value'] !== $currentChecklist[$i]['value']) {
 //            echo "<pre>";
